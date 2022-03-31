@@ -20,15 +20,10 @@ jobs:
         # with:
         #   version: 0.9.105
 
-      - name: Install Tinytex for PDF book
-        run: |
-          quarto tools install tinytex
-
-
       - name: Render book to all format
         # Add any command line argument needed
         run: |
-          quarto render --to all
+          quarto render --to html
 
       - name: Deploy 🚀
         # only deploy when push to main
