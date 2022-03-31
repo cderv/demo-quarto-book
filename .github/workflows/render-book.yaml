@@ -23,7 +23,12 @@ jobs:
       - name: Install TinyTeX
         run: |
           quarto tools install tinytex
+
+      - name: Add TinyTex to PATH
+        run: |
           quarto tools info tinytex
+          quarto tools info tinytex | jq '.directory'
+
 
       - run: tlmgr --version
 
