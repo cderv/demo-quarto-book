@@ -27,6 +27,8 @@ jobs:
 
       - run: tlmgr --version
 
+      - run: ls --lisa ~/.local/bin
+
       - name: Render book to all format
         # Add any command line argument needed
         run: |
