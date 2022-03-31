@@ -17,8 +17,8 @@ jobs:
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/install-quarto@v1
         # uncomment and fill to pin a version
-        with:
-          version: 0.9.105
+        # with:
+        #   version: 0.9.105
 
       - name: Install TinyTeX
         run: |
