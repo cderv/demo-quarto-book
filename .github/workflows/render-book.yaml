@@ -26,7 +26,8 @@ jobs:
 
       - name: Add TinyTex to PATH
         run: |
-          find /home -name tlmgr
+          echo $PATH
+          ls ~/bin
 
       - run: tlmgr --version
 
