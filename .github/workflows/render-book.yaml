@@ -14,14 +14,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: "Install Quarto"
+      - name: Install Quarto
         uses: quarto-dev/quarto-actions/install-quarto@v1
         # uncomment and fill to pin a version
         # with:
         #   version: 0.9.105
 
-      - name: "Quarto render"
-        shell: bash
+      - name: Install Tinytex for PDF book
+        run: |
+          quarto tools install tinytex
+
+
+      - name: Render book to all format
+        # Add any command line argument needed
         run: |
           quarto render --to all
 
