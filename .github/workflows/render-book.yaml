@@ -14,23 +14,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-    - name: "Install Quarto"
-      uses: quarto-dev/quarto-actions/install-quarto@v1
-      # uncomment and fill to pin a version
-      # with:
-      #   version: 0.9.105
+      - name: "Install Quarto"
+        uses: quarto-dev/quarto-actions/install-quarto@v1
+        # uncomment and fill to pin a version
+        # with:
+        #   version: 0.9.105
 
-    - name: "Quarto render"
-      shell: bash
-      run: |
-        quarto render --to all
+      - name: "Quarto render"
+        shell: bash
+        run: |
+          quarto render --to all
 
-    - name: Deploy 🚀
-      # only deploy when push to main
-      if: github.event_name != 'pull_request'
-      uses: JamesIves/github-pages-deploy-action@4.2.5
-      with:
-        # The branch the action should deploy to.
-        branch: gh-pages
-        # The folder the action should deploy. Adapt if you changed in Quarto config
-        folder: _book
+      - name: Deploy 🚀
+        # only deploy when push to main
+        if: github.event_name != 'pull_request'
+        uses: JamesIves/github-pages-deploy-action@4.2.5
+        with:
+          # The branch the action should deploy to.
+          branch: gh-pages
+          # The folder the action should deploy. Adapt if you changed in Quarto config
+          folder: _book
