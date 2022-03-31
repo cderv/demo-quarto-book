@@ -23,11 +23,7 @@ jobs:
       - name: Install TinyTeX
         run: |
           quarto tools install tinytex
-
-      - name: Add TinyTex to PATH
-        run: |
-          echo $PATH
-          ls ~/bin
+          echo "$HOME/bin" >> $GITHUB_PATH
 
       - run: tlmgr --version
 
