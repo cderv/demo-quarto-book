@@ -20,10 +20,16 @@ jobs:
         with:
           version: 0.9.105
 
+      - name: Install TinyTeX
+        run: |
+          quarto tools install tinytex
+
+      - run: tlmgr --version
+
       - name: Render book to all format
         # Add any command line argument needed
         run: |
-          quarto render --to html
+          quarto render
 
       - name: Deploy 🚀
         # only deploy when push to main
