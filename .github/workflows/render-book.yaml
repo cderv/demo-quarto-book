@@ -23,6 +23,7 @@ jobs:
       - name: Install TinyTeX
         run: |
           quarto tools install tinytex
+          quarto tools info tinytex
 
       - run: tlmgr --version
 
